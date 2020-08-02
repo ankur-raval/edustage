@@ -20,7 +20,7 @@ class user_registration(AbstractUser):
     address = models.TextField(max_length=200, default=None, null=True)
     user_type = models.CharField(max_length=20, default= None, null=True, choices=(('admins','admins'),('teacher','teacher'),('student','student')))
     designation = models.CharField(max_length=20, default= None, null=True, choices=(('manager','manager'),('principal','principal')))
-    images=models.URLField(null=True, default=None)  
+    images=models.URLField(null=True, default=None)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name

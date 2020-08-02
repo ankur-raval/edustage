@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from admin_app.models import user_registration, classes
+from admin_app.models import user_registration, courses
 from pages.views import students_view
 
 
@@ -13,12 +13,13 @@ def stuent_registration_view(request):
         password = request.POST['password']
         contact = request.POST['contact']
         address = request.POST['address']
-        class_name = request.POST['class_name']
+        course_name = request.POST['course_name']
                 
         user_registration.objects.create_user(first_name=first_name, last_name=last_name, dob=dob, 
                                                          email=email, contact=contact, address=address, 
                                                          username=email, password=password, user_type='student',
-                                                         class_name=classes.objects.get(class_name=class_name), subject_name=None)                                                               
+                                                         course_name=courses.objects.get(course_name=course_name))
+                                                                                                                     
 
         return redirect(students_view)
     else:        

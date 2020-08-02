@@ -22068,4 +22068,8 @@ fieldset[disabled][disabled] .dark-edition .has-error .form-control,
   }
 }
 
+::placeholder {
+  color: rgb(194, 188, 188) !important;
+  }
+
 /*# sourceMappingURL=dashboard-free.css.map */

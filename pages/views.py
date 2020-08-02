@@ -11,9 +11,8 @@ def admin_dashboard_tables_view(request):
     return render(request, 'admin_dashboard_tables.html', {'course_list': course_list})
 
 def teachers_view(request):
-    teachers_list = user_registration.objects.filter(user_type='teacher')
-    join_date = user_registration.objects.all()
-    return render(request, 'teachers.html', {'teachers_list':teachers_list, 'join_date':join_date})
+    teachers_list = user_registration.objects.filter(user_type='teacher')    
+    return render(request, 'teachers.html', {'teachers_list':teachers_list})
 
 def teacher_dashboard_view(request):
     return render(request, 'teacher_dashboard.html')
